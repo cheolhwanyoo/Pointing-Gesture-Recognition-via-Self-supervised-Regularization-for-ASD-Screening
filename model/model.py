@@ -1,6 +1,6 @@
 from model.resnet import Resnet50_fc, Resnet50_Siam
 from model.transformer import vit_Siam
-from BYOL.byol_pytorch import BYOL
+from byol_pytorch import BYOL
 from torchvision import models
 import timm.models
 import torch
