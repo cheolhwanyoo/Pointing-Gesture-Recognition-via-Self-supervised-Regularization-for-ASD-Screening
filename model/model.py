@@ -4,7 +4,6 @@ from byol_pytorch import BYOL
 from torchvision import models
 import timm.models
 import torch
-from model.vits import vit_base
 
 def build_net(args):
     if args.backbone == 'resnet':
