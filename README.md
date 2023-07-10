@@ -26,13 +26,13 @@ pip install -r requirements.txt
 ## Test
 - To test code, run the command below:
 ```python
-python demo_livinglab.py --model_name --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
+python demo_livinglab.py --model_name 'model_name' --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
 ```
 
 ## Training
 - To train code, run the command below:
 ```python
-python main.py --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
+python main.py --model_name 'model_name' --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
 ```
 
 
