@@ -1,8 +1,7 @@
 # PointDetectNet: Offcial Pytorch Implementation
 
-This repository provides the official PyTorch implementation of the following paper: [XYDeblur](https://openaccess.thecvf.com/content/CVPR2022/html/Ji_XYDeblur_Divide_and_Conquer_for_Single_Image_Deblurring_CVPR_2022_paper.html)
-
-<img src="fig_architecture.png" width="800">
+This repository provides the official PyTorch implementation of the following paper:
+<img src="fig_architecture.pdf" width="800">
 
 > Pointing Gesture Recognition via Self-supervised Regularization for ASD
 Screening \
