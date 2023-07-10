@@ -131,7 +131,6 @@ if __name__ == '__main__':
         fy = camera_param['fy']
         cx = camera_param['cx']
         cy = camera_param['cy']
-
         BOX_HALF_LEN = args.box_half_len
         k_val = args.k_val
 
@@ -210,12 +209,10 @@ if __name__ == '__main__':
                     if capture.color is not None and capture.depth is not None:
                         img = mx.image.imdecode(capture.color, to_rgb=0).asnumpy()
                         depth = capture.transformed_depth
-
                     else:
                         continue
 
                 img_copy = copy.deepcopy(img)
-
                 center_pt3_2d = (0, 0)
                 pt_rel_list = []
 
@@ -249,7 +246,6 @@ if __name__ == '__main__':
                                 y_scale = int(humans[i].body_parts[5].y * image_h + 0.5)
                                 pt_idx_1 = transform_2d_to_3d(depth, x_scale, y_scale, camera_param)
 
-                                # 선생님은 주로 젤 멀리있으니까 제외시켜주자. 1.4m
                                 if pt_idx_0[2] > args.dist_thres:
                                     continue
 
@@ -281,23 +277,18 @@ if __name__ == '__main__':
                     for idx, human in enumerate(humans):
                         # draw point
 
-                        if idx == baby_idx:  # 애기 id만 care
-
+                        if idx == baby_idx: 
                             for i in range(CocoPart.Background.value):
 
                                 if i not in humans[baby_idx].body_parts.keys():
                                     continue
-
                                 if i == 4 or i == 7:
 
                                     pre_idx = i - 1 
 
                                     if pre_idx in human.body_parts.keys():
-
                                         if 14 in human.body_parts.keys() or 15 in human.body_parts.keys():
-
                                             if 14 in human.body_parts.keys() and 15 in human.body_parts.keys():
-
                                                 ref_center_pt_2d = \
                                                     (int((human.body_parts[14].x + human.body_parts[15].x) / 2.0 * image_w + 0.5),
                                                      int((human.body_parts[14].y + human.body_parts[15].y) / 2.0 * image_h + 0.5))
@@ -311,7 +302,6 @@ if __name__ == '__main__':
 
                                             ref_center_pt_3d = transform_2d_to_3d(depth, ref_center_pt_2d[0],
                                                                                   ref_center_pt_2d[1], camera_param)
-
                                         body_part_pre = human.body_parts[i - 1]
                                         body_part = human.body_parts[i]
 
@@ -336,7 +326,7 @@ if __name__ == '__main__':
 
                                         if center_pt1[2] <= 0 or center_pt2[2] <= 0 or center_pt3[2] <= 0:
                                             continue
-
+                                            
                                         Xmin = center_pt3[0] - BOX_HALF_LEN
                                         Xmax = center_pt3[0] + BOX_HALF_LEN
                                         Ymin = center_pt3[1] - BOX_HALF_LEN
@@ -344,7 +334,6 @@ if __name__ == '__main__':
                                         Zmin = center_pt3[2] - BOX_HALF_LEN
                                         Zmax = center_pt3[2] + BOX_HALF_LEN
 
-                                        # 여기 z 값 고찰 필요...
                                         xmin = fx * Xmin / center_pt3[2] + cx
                                         xmax = fx * Xmax / center_pt3[2] + cx
                                         ymin = fy * Ymin / center_pt3[2] + cy
@@ -414,7 +403,6 @@ if __name__ == '__main__':
                         cv2.putText(img, text, (pos[0], pos[1] + text_h + 2 - 1),
                                     cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 0), 2)
 
-
                     prob_hand_list_video.append(prob_hand_list)
                     pred_list_video.append(preds_list)
 
@@ -428,7 +416,6 @@ if __name__ == '__main__':
                     if args.positive_persist_thres == 0:
                         pred_buf = 1
                         positive_persist_thres = 1
-
                     if (pred_buf == 1 and int(aggregated_pred) == 1):
                         pos_cnt += 1
                         text_color_arm = (0, 0, 255)
@@ -448,7 +435,6 @@ if __name__ == '__main__':
 
                     pred_buf = int(aggregated_pred)
 
-            
                 img = cv2.putText(img, 'b_pointing: '  "%s" % (b_flag_pointing), (25, 150),
                                   cv2.FONT_HERSHEY_SIMPLEX, 1.2, text_color_pointing, 2)
                 img = cv2.putText(img, 'label: '  "%s" % (pointing_label[1 - labels[idx_list]]), (25, 200),
@@ -474,7 +460,6 @@ if __name__ == '__main__':
             except EOFError:
                 break
 
-        ### write final pointing probability
         pointing_prob = None
 
         if b_flag_pointing == True:
@@ -487,7 +472,6 @@ if __name__ == '__main__':
                 new_list.append(np.mean(prob_hand_list_video[i]))
 
             new_list = [x for x in new_list if math.isnan(x) == False]
-
             pointing_prob = np.mean(new_list)
 
         fp = open(os.path.join('checkpoints/logs', txt_dir), 'a')
