@@ -8,7 +8,6 @@ import torch.nn as nn
 import timm.models
 import operator
 import torchvision.transforms as transforms
-import mxnet as mx
 
 from argparse import ArgumentParser
 from lib_openpose.network.rtpose_vgg import get_model
@@ -205,7 +204,7 @@ if __name__ == '__main__':
                     capture = playback.get_next_capture()
 
                     if capture.color is not None and capture.depth is not None:
-                        img = mx.image.imdecode(capture.color, to_rgb=0).asnumpy()
+                        img = cv2.imdecode(capture.color, cv2.IMREAD_COLOR)
                         depth = capture.transformed_depth
                     else:
                         continue
