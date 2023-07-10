@@ -24,8 +24,6 @@ from model.resnet import Resnet50_fc, Resnet50_Siam
 from BYOL.byol_pytorch import BYOL
 from model.transformer import vit_Siam
 from torchvision import models
-from mmpose.apis import (inference_top_down_pose_model, init_pose_model, process_mmdet_results, vis_pose_result)
-from mmpose.datasets import DatasetInfo
 from numpy import linalg as LA
 from PIL import Image
 from pathlib import Path
