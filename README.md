@@ -24,7 +24,7 @@ python demo_livinglab.py
 ## Training
 - To train code, run the command below:
 ```python
-python main.py --SSL ['None', 'SimSiam', 'BYOL'] -- backbone ['resnet, 'vit_B_32']
+python main.py --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
 ```
 
 
