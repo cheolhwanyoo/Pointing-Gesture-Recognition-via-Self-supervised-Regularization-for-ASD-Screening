@@ -48,7 +48,7 @@ def get_dataloaders(args):
 
 class PointDataset(Dataset):
 
-    def __init__(self, root_dir='dir/nturgbd_rgb/pointing_binaryDB_hand/',
+    def __init__(self, root_dir='data/ntu_rgbd/pointing_binary/',
                  transform=None,
                  stage='train',
                  args=None):
@@ -68,8 +68,8 @@ class PointDataset(Dataset):
 
         ## NTU DB ##
         if stage == 'train' or stage == 'val':
-            basedir_pos = os.path.join(root_dir, '0_refined_{}'.format(stage))
-            basedir_neg = os.path.join(root_dir, '1_refined_{}'.format(stage))
+            basedir_pos = os.path.join(root_dir, '0_samples_{}'.format(stage))
+            basedir_neg = os.path.join(root_dir, '1_samples_{}'.format(stage))
 
             self.input_list_pos += [os.path.join(basedir_pos, f) for f in sorted(os.listdir(basedir_pos)) if
                                         f.split(".")[-1] == "png" or f.split(".")[-1] == "jpg"]
