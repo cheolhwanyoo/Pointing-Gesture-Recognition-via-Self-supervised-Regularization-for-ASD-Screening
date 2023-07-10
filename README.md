@@ -1,5 +1,8 @@
 # PointDetectNet: Offcial Pytorch Implementation
 
+## Updates
+07/10/2023: Project page built
+
 This repository provides the official PyTorch implementation of the following paper:
 <img src="fig_architecture.png" width="800">
 
