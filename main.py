@@ -10,7 +10,7 @@ from tqdm import tqdm
 from utility import Adder, check_lr, loss_negative_cosine
 from pathlib import Path
 from model.resnet import Resnet50_fc, Resnet50_Siam
-from model.transformer import vit_Siam, vit_Barlow
+from model.transformer import vit_Siam
 from data.data_load import get_dataloaders
 from torchvision import models
 from byol_pytorch import BYOL
