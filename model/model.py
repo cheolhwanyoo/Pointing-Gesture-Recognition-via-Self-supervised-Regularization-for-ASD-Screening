@@ -13,7 +13,17 @@ def build_net(args):
 
         elif args.SSL == 'SimSiam':
             model = Resnet50_Siam(2)
-       
+        elif args.SSL == 'BYOL':
+            resnet = models.resnet50(pretrained=True)
+            ## BYOL
+            model = BYOL(
+                resnet,
+                image_size=256,
+                pre_class_dim=2048,
+                hidden_layer='avgpool',
+                use_momentum=True 
+            )
+            
     elif args.backbone == 'vit_B_32':
         fea_dim = 768
 
