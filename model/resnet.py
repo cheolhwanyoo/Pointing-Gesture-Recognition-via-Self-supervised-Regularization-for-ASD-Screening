@@ -97,16 +97,10 @@ class Resnet50_Siam(nn.Module):
         p2 = self.h(z2)
 
         logits1 = self.classifier(z1)
-        #logits2 = self.classifier(z2)
 
         logits1 = logits1.squeeze(2)
         logits1 = logits1.squeeze(2)
-        #logits2 = logits2.squeeze(2)
-        #logits2 = logits2.squeeze(2)
 
-        #averaged_logits = (logits1 + logits2) / 2.0
         metric_feature = [z1, z2, p1, p2]
 
-        #temp = 0
-        #return logits1
         return logits1, metric_feature
