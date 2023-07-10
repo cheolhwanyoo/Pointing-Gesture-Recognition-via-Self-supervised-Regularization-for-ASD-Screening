@@ -110,31 +110,3 @@ class Resnet50_Siam(nn.Module):
         #temp = 0
         #return logits1
         return logits1, metric_feature
-
-class Resnet50_Barlow(nn.Module):
-
-    def __init__(self, num_classes=2):
-        super(Resnet50_Barlow, self).__init__()
-        net = models.resnet50(pretrained=True)
-        self.features = nn.Sequential(*list(net.children())[:-1])
-        self.classifier = nn.Sequential(nn.Conv2d(in_channels=2048, out_channels=num_classes, kernel_size=1))
-
-    def forward(self, x1, x2):
-    # def forward(self, x1):
-        z1 = self.features(x1)
-        z2 = self.features(x2)
-
-        logits1 = self.classifier(z1)
-        #logits2 = self.classifier(z2)
-
-        logits1 = logits1.squeeze(2)
-        logits1 = logits1.squeeze(2)
-        #logits2 = logits2.squeeze(2)
-        #logits2 = logits2.squeeze(2)
-
-        #averaged_logits = (logits1 + logits2) / 2.0
-        metric_feature = [z1, z2]
-
-        #temp = 0
-        #return logits1
-        return logits1, metric_feature
