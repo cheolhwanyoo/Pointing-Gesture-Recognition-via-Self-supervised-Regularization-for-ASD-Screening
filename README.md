@@ -15,6 +15,19 @@ Screening
 ## Updates
 07/10/2023: Project page built
 
+## Get Started
+- Clone this repo and install dependencies:
+```bash
+git clone this repository
+cd PointDetectNet-pytorch
+pip install -r requirements.txt
+```
+
+- To download the TensorFlow pre-trained weights and convert them to PyTorch, run:
+```bash
+python convert_weights.py
+```
+
 ## Test
 - To test code, run the command below:
 ```python
