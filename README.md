@@ -32,4 +32,4 @@ python main.py --mode "train"
 
 Examples of result images on the *ASD-Pointing* dataset.
 
-<img src="fig_results.png" width="1000">
+
