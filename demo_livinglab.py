@@ -93,7 +93,7 @@ if __name__ == '__main__':
     print(args, end='\n\n')
 
     if args.input == 'mkv':
-        base_dir_pos = '/dir/pointing_positive/'
+        base_dir_pos = 'living_lab_db/contents/pointing_positive/'
         folder_list_pos = os.listdir(base_dir_pos)
         input_list_pos = []
         labels_pos = []
@@ -105,7 +105,7 @@ if __name__ == '__main__':
                                f.split(".")[-1] == "mkv"]
         labels_pos = [0] * len(input_list_pos)
 
-        base_dir_neg = '/dir/pointing_negative/'
+        base_dir_neg = 'living_lab_db/contents/pointing_negative/'
         folder_list_neg = os.listdir(base_dir_neg)
         input_list_neg = []
         labels_neg = []
@@ -299,7 +299,7 @@ if __name__ == '__main__':
                                             if 14 in human.body_parts.keys() and 15 in human.body_parts.keys():
 
                                                 ref_center_pt_2d = \
-                                                    (int((human.body_parts[14].x + human.body_parts[15].x) / 2.0 * image_w + 0.5), 
+                                                    (int((human.body_parts[14].x + human.body_parts[15].x) / 2.0 * image_w + 0.5),
                                                      int((human.body_parts[14].y + human.body_parts[15].y) / 2.0 * image_h + 0.5))
                                             elif 14 in human.body_parts.keys():
                                                 ref_center_pt_2d = (int(human.body_parts[14].x * image_w + 0.5),
@@ -414,14 +414,14 @@ if __name__ == '__main__':
                         cv2.putText(img, text, (pos[0], pos[1] + text_h + 2 - 1),
                                     cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 0, 0), 2)
 
-                     
+
                     prob_hand_list_video.append(prob_hand_list)
                     pred_list_video.append(preds_list)
 
                     if len(preds_list) == 0:
                         aggregated_pred = 0
                     else:
-                        aggregated_pred = 1 - min(preds_list)  
+                        aggregated_pred = 1 - min(preds_list)
 
                     positive_persist_thres = args.positive_persist_thres
 
