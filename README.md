@@ -1,7 +1,7 @@
 # PointDetectNet: Offcial Pytorch Implementation
 
 This repository provides the official PyTorch implementation of the following paper:
-<img src="fig_architecture.pdf" width="800">
+<img src="fig_architecture.png" width="800">
 
 > Pointing Gesture Recognition via Self-supervised Regularization for ASD
 Screening \
