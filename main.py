@@ -13,7 +13,7 @@ from model.resnet import Resnet50_fc, Resnet50_Siam
 from model.transformer import vit_Siam, vit_Barlow
 from data.data_load import get_dataloaders
 from torchvision import models
-from BYOL.byol_pytorch import BYOL
+from byol_pytorch import BYOL
 from timm.data import resolve_data_config
 from model.model import build_net
 
