@@ -10,7 +10,6 @@ import operator
 from typing import Optional, Tuple
 
 import torch.nn as nn
-import onnxruntime
 
 class Adder(object):
     def __init__(self):
