@@ -91,7 +91,7 @@ if __name__ == '__main__':
     print(args, end='\n\n')
 
     if args.input == 'mkv':
-        base_dir_pos = '/home/ych/data/living_lab_db/contents/pointing_positive_final/'
+        base_dir_pos = 'living_lab_db/contents/pointing_positive/'
         folder_list_pos = os.listdir(base_dir_pos)
         input_list_pos = []
         labels_pos = []
@@ -103,7 +103,7 @@ if __name__ == '__main__':
                                f.split(".")[-1] == "mkv"]
         labels_pos = [0] * len(input_list_pos)
 
-        base_dir_neg = '/home/ych/data/living_lab_db/contents/pointing_negative_final/'
+        base_dir_neg = 'living_lab_db/contents/pointing_negative/'
         folder_list_neg = os.listdir(base_dir_neg)
         input_list_neg = []
         labels_neg = []
