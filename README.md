@@ -15,7 +15,7 @@ Screening
 ## Updates
 07/10/2023: Project page built
 
-will be continuously updated.
+All code related to this work will be made available. 
 
 ## Get Started
 - Clone this repo and install dependencies:
@@ -63,7 +63,7 @@ We provide our pre-trained models.
 You can test our network by putting pre-trained models on checkpoints/logs/resnet50_nut or resnet50_ntu_SimSiam/model_best.checkpoint
 
 - ResNet-50 (baseline): https://drive.google.com/file/d/~
-- Proposed<sup>SimSiam</sup>: https://drive.google.com/file/d/~
+- Proposed<sub>SimSiam</sub>: https://drive.google.com/file/d/~
 
 
 
