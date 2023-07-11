@@ -21,6 +21,7 @@ Screening
 git clone this repository
 cd PointDetectNet-pytorch
 pip install -r requirements.txt
+install Pytorch (1.8.1)
 ```
 
 ## Test
