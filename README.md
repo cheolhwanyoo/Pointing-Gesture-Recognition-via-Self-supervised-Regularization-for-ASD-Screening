@@ -14,6 +14,7 @@ Screening
 
 ## Updates
 07/10/2023: Project page built
+It will be continuously updated.
 
 ## Get Started
 - Clone this repo and install dependencies:
