@@ -75,4 +75,4 @@ You can test our network by putting pre-trained models on checkpoints/logs/resne
 Examples of result images on the *ASD-Pointing* dataset. The green and red colors represent test cases where pointing is performed
 and not performed, respectively. The videos were captured with four Azure Kinect cameras in three living lab spaces.
 
-<img src="fig_result.png" width="1000">
+<!--<img src="fig_result.png" width="1000">-->
