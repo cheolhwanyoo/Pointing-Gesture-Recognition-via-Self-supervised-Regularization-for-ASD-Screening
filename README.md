@@ -27,7 +27,7 @@ install Pytorch (1.8.1)
 ```
 
 ## Test
-- Prepare recorded video file in .mkv format
+- Prepare recorded video file in .mkv format.
 After preparing data, the data folder should be like the format below:
 
 ```
@@ -64,9 +64,6 @@ You can test our network by putting pre-trained models on checkpoints/logs/resne
 
 - ResNet-50 (baseline): https://drive.google.com/file/d/
 - Proposed<sub>SimSiam</sub>: https://drive.google.com/file/d/
-
-
-
 
 
 
