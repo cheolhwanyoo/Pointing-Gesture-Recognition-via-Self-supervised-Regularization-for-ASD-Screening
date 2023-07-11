@@ -24,6 +24,25 @@ pip install -r requirements.txt
 ```
 
 ## Test
+- Prepare recorded video file in .mkv format
+After preparing data, the data folder should be like the format below:
+
+```
+living_lab_db
+├─ contents
+│ ├─ pointing_negative    
+│ │ ├─ subject_nmae
+│ │ | ├─ xxxx.mkv
+│ │ ├─ ......
+│ │
+│ ├─ pointing_positive    
+│ │ ├─ subject_nmae
+│ │ | ├─ xxxx.mkv
+│ │ ├─ ......
+│ │
+
+```
+
 - To test code, run the command below:
 ```python
 python demo_livinglab.py --model_name 'model_name' --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
