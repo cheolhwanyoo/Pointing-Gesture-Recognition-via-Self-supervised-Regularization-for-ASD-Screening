@@ -54,6 +54,18 @@ python demo_livinglab.py --model_name 'model_name' --SSL ['None', 'SimSiam', 'BY
 python main.py --model_name 'model_name' --SSL ['None', 'SimSiam', 'BYOL'] --backbone ['resnet, 'vit_B_32']
 ```
 
+## Model
+
+We provide our pre-trained models. 
+You can test our network by putting pre-trained models on checkpoints/logs/resnet50_nut(resnet50_ntu_SimSiam)/model_best.checkpoint
+
+- ResNet-50 (baseline): https://drive.google.com/file/d/1EQJoQj3YMLFfzrbgzWMD3Xj96RqLdIlx/view?usp=sharing
+- Proposed_SimSiam: https://drive.google.com/file/d/166sufeHcdDTgXHNbCRzTC4T6DzuflB5m/view?usp=sharing
+
+
+
+
+
 
 ## Experimental Results
 
