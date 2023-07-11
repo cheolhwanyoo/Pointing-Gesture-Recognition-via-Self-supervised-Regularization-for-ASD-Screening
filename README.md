@@ -63,7 +63,7 @@ We provide our pre-trained models.
 You can test our network by putting pre-trained models on checkpoints/logs/resnet50_nut or resnet50_ntu_SimSiam/model_best.checkpoint
 
 - ResNet-50 (baseline): https://drive.google.com/file/d/~
-- Proposed~SimSiam~: https://drive.google.com/file/d/~
+- Proposed~(SimSiam)~: https://drive.google.com/file/d/~
 
 
 
