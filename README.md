@@ -3,7 +3,7 @@
 This repository is the official implementation of **[Pointing Gesture Recognition via Self-supervised Regularization for ASD](https://openaccess.thecvf.com/content/ICCV2023W/ASI/html/Yoo_Pointing_Gesture_Recognition_via_Self-Supervised_Regularization_for_ASD_Screening_ICCVW_2023_paper.html)**
 
 
-<img src="fig_architecture.png" width="700">
+![sample1](fig_architecture.png)
 
 > Pointing Gesture Recognition via Self-supervised Regularization for ASD
 Screening 
@@ -105,7 +105,7 @@ https://drive.google.com/file/d/19wmz5ve8Go62dWoKaSP_7DbCdds6l1VH/view?usp=drive
 Examples of result images on the *ASD-Pointing* dataset. The green and red colors represent test cases where pointing is performed
 and not performed, respectively. The videos were captured with four Azure Kinect cameras in three living lab spaces.
 
-<img src="fig_result.png" width="700">
+![sample1](fig_result.png)
 
 |   Model                | Accuracy | Recall     | Precision   | F1-score    |
 | :---------:            | :-------:| :--------: | :---------: | :---------: |
