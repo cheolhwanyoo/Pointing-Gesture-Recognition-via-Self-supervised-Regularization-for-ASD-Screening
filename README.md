@@ -1,9 +1,9 @@
-# Pointing Gesture Recognition via Self-supervised Regularization for ASD Screening
+# Pointing Gesture Recognition via Self-supervised Regularization for ASD
 
-This repository is the official implementation of **[Pointing Gesture Recognition via Self-supervised Regularization for ASD Screening](https://openaccess.thecvf.com/content/ICCV2023W/ASI/html/Yoo_Pointing_Gesture_Recognition_via_Self-Supervised_Regularization_for_ASD_Screening_ICCVW_2023_paper.html)**
+This repository is the official implementation of **[Pointing Gesture Recognition via Self-supervised Regularization for ASD](https://openaccess.thecvf.com/content/ICCV2023W/ASI/html/Yoo_Pointing_Gesture_Recognition_via_Self-Supervised_Regularization_for_ASD_Screening_ICCVW_2023_paper.html)**
 
 
-![sample1](fig_architecture.png)
+<img src="fig_architecture.png" width="700">
 
 > Pointing Gesture Recognition via Self-supervised Regularization for ASD
 Screening 
@@ -19,6 +19,8 @@ Screening
 
 ## Updates
 07/10/2023: Project page built
+
+08/05/2024: Code update - removing depth dependency
 
 All code related to this work will be made available. 
 
@@ -59,29 +61,32 @@ python main.py --model_name 'model_name' --SSL ['None', 'SimSiam', 'BYOL'] --bac
 ```
 
 ## Test
-To identify children among the people present in the scene we utilize OpenPose. 
+<!--To identify children among the people present in the scene we utilize OpenPose. 
 
 To run the test(demo) code, you need to include the additional *lib* and *evaluate* folder in our project folder after following the installation guide at the following URL.
 (https://github.com/tensorboy/pytorch_Realtime_Multi-Person_Pose_Estimation). 
 
-Also, please download pose_model.pth from the corresponding github and put it in the checkpoints folder.
+Also, please download pose_model.pth from the corresponding github and put it in the checkpoints folder.-->
 
-- Prepare recorded video file in .mkv format.
+To identify children among the people present in the scene and detect hand region, we utlize YOLO-World and MediaPipe.
+
+To run the test(demo) code, you need to download YOLO-World model(child_adult_yolow.onnx) from the link(https://drive.google.com/file/d/1gLLPwWOaH6bwVN091Gat_d8vRaH63fBw/view?usp=drive_link) and put it in the checkpoints folder.
+
+- Prepare recorded video file in .mp4 or .avi format.
 After preparing data, the data folder should be like the format below:
 
 ```
 living_lab_db
-├─ contents
-│ ├─ pointing_negative    
-│ │ ├─ subject_nmae
-│ │ | ├─ xxxx.mkv
-│ │ ├─ ......
-│ │
-│ ├─ pointing_positive    
-│ │ ├─ subject_nmae
-│ │ | ├─ xxxx.mkv
-│ │ ├─ ......
-│ │
+├─ pointing_negative    
+│ ├─ subject_name
+│ | ├─ xxxx.mp4
+│ ├─ ......
+│
+├─ pointing_positive    
+│ ├─ subject_name
+│ | ├─ xxxx.mp4
+│ ├─ ......
+│
 
 ```
 
@@ -105,7 +110,7 @@ https://drive.google.com/file/d/19wmz5ve8Go62dWoKaSP_7DbCdds6l1VH/view?usp=drive
 Examples of result images on the *ASD-Pointing* dataset. The green and red colors represent test cases where pointing is performed
 and not performed, respectively. The videos were captured with four Azure Kinect cameras in three living lab spaces.
 
-![sample1](fig_result.png)
+<img src="fig_result.png" width="700">
 
 |   Model                | Accuracy | Recall     | Precision   | F1-score    |
 | :---------:            | :-------:| :--------: | :---------: | :---------: |
